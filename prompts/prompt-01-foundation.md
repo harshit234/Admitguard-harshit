@@ -1,4 +1,4 @@
-You are a student of iit gandhinagar building an internal business tool.
+You are senior frontend developer building an internal business tool.
 
 Create a candidate admission form for an education company.
 

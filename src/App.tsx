@@ -330,7 +330,7 @@ export default function App() {
       let exceptions = 0;
       let hasError = false;
 
-      Object.entries(pendingRules).forEach(([field, config]: [string, any]) => {
+      Object.entries(pendingRules as Record<string, any>).forEach(([field, config]) => {
         const value = log[field as keyof typeof log];
         
         // Simplified validation for impact preview
@@ -411,7 +411,7 @@ export default function App() {
     const newRationaleErrors: Record<string, string> = {};
 
     // Apply rules from rules state
-    Object.entries(rules).forEach(([field, config]) => {
+    Object.entries(rules as Record<string, any>).forEach(([field, config]) => {
       const value = formData[field as keyof typeof formData];
 
       if (config.type === 'strict') {
@@ -505,7 +505,7 @@ export default function App() {
     const hasStrictErrors = Object.keys(newErrors).length > 0;
     
     // Dynamically check if all required fields are filled
-    const allRequiredFilled = Object.entries(rules).every(([field, config]) => {
+    const allRequiredFilled = Object.entries(rules as Record<string, any>).every(([field, config]) => {
       if (config.type === 'strict' && config.required && field !== 'offerSent') {
         return !!formData[field as keyof typeof formData];
       }
@@ -717,7 +717,7 @@ export default function App() {
                 )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {Object.entries(pendingRules).map(([field, config]) => (
+                  {Object.entries(pendingRules as Record<string, any>).map(([field, config]) => (
                     <div key={field} className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-3">
@@ -1506,7 +1506,7 @@ export default function App() {
 
       {/* Validation Insights Panel */}
       {activeTab === 'form' && (
-            <div className="lg:col-span-4 space-y-6">
+        <div className="lg:col-span-4 space-y-6">
               <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-xl shadow-slate-200/60 sticky top-8">
                 <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                   <LayoutDashboard size={20} className="text-brand-600" />

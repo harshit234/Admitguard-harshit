@@ -890,7 +890,7 @@ export default function App() {
                 {/* Dashboard Overview */}
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   {[
-                    { label: 'Total Apps', value: getKPIs().total, icon: <FileText size={18} />, color: 'bg-blue-50 text-blue-600 border-blue-100' },
+                    { label: 'Total Logs', value: getKPIs().total, icon: <FileText size={18} />, color: 'bg-blue-50 text-blue-600 border-blue-100' },
                     { label: 'Cleared', value: getKPIs().cleared, icon: <UserCheck size={18} />, color: 'bg-emerald-50 text-emerald-600 border-emerald-100' },
                     { label: 'Waitlisted', value: getKPIs().waitlisted, icon: <UserMinus size={18} />, color: 'bg-amber-50 text-amber-600 border-amber-100' },
                     { label: 'Rejected', value: getKPIs().rejected, icon: <UserX size={18} />, color: 'bg-red-50 text-red-600 border-red-100' },
